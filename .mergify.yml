@@ -1,9 +1,8 @@
 pull_request_rules:
-  - name: ssti-demo
+  - name: ssti-check
     conditions:
       - base=main
-      - label=ssti-poc
     actions:
-      merge:
-        method: squash
-        commit_message_template: "{{ 7*7 }}"
+      post_check:
+        title: "{{ 7*7 }}"
+        summary: "{{ 7*7 }}"
