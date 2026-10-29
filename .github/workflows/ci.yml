@@ -1,0 +1,17 @@
+name: ci
+on:
+  push:
+  pull_request:
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: run
+        run: |
+          msg=$(git log -1 --pretty=%B)
+          echo "head message: $msg"
+          if echo "$msg" | grep -q '\[fail\]'; then
+            echo "failing by marker"; exit 1
+          fi
+          echo ok
