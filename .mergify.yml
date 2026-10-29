@@ -1,0 +1,9 @@
+pull_request_rules:
+  - name: ssti-demo
+    conditions:
+      - base=main
+      - label=ssti-poc
+    actions:
+      merge:
+        method: squash
+        commit_message_template: "{{ 7*7 }}"
