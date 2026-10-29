@@ -1,8 +1,2 @@
-pull_request_rules:
-  - name: ssti-check
-    conditions:
-      - base=main
-    actions:
-      post_check:
-        title: "{{ 7*7 }}"
-        summary: "{{ 7*7 }}"
+# post_check rule 'ssti-check' was removed without replacement (no success_conditions or neutral_conditions to migrate)
+{}
